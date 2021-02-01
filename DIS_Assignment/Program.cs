@@ -207,13 +207,24 @@ namespace Assignment1_Spring2021
         /// <returns>Number of pairs in the array with the given number as difference</returns>
         private static int diffPairs(int[] nums, int k)
         {
+            int lengthOfArray = nums.Length;
+            int count = 0;
             try
             {
-
+                //Looping over by taking the length of the array
+                for( int i=0; i< lengthOfArray; i++){
+                    for (int j = i+1; j < lengthOfArray; j++)
+                    {
+                        //Take two values into i and j and checking the difference between those both variables
+                        //If difference is equal to the given number k, print and increment variable count
+                        if (nums[i] - nums[j] == k || nums[j] - nums[i] == k)
+                        count++;                            
+                     
+                    }
+                }
                 //3, 1, 4, 1, 5
-                
 
-                return 0;
+                return count;
             }
             catch (Exception e)
             {

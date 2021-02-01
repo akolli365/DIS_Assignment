@@ -262,7 +262,11 @@ namespace Assignment1_Spring2021
                     for (int i = 0; i < numberOfMails; i++)
                     {
                     String mail = emails.ElementAt(i);
+                    //Split email domain name and actual name
                     string[] splitMail = mail.Split('@');
+
+                    //Checking condition, if mail has + in it, if yes checking for . after that, if yes removing it
+                    //If mail does not have . after + sending mail
                     if ((splitMail[0].Contains("+")))
                     {
                         String[] name = splitMail[0].Split("+");

@@ -258,6 +258,7 @@ namespace Assignment1_Spring2021
             {
                 int numberOfMails = emails.Count;
                 int count = 0;
+               // List<String> sentMail = new List<String>;
                     //Looping over by taking the length of the array
                     for (int i = 0; i < numberOfMails; i++)
                     {
@@ -282,6 +283,7 @@ namespace Assignment1_Spring2021
                         }
                     else
                     {
+                        
                         count++;
                     }
 
@@ -319,30 +321,38 @@ namespace Assignment1_Spring2021
         {
             try
             {
-                //String a, b, c, d;
-/*                string[,] paths1 = new string[,] { { "London", "New York" }, { "New York", "Tampa" }, { "Delhi", "London" } };
-*/                for (int i=0; i<paths.Length; i++)
+                ///Create  a list to store city names
+                List<string> city = new List<string>();
+                ///getLength(1) gives columns and storing the source city
+                for (int i = 0; i < paths.GetLength(1); i++)
                 {
-                    //a = paths[2, 0];
-                    if (paths[2, 1].Equals(paths[0, 0]))
+                    city.Add(paths[2, i]);
+                }
+                //Printing the source city 
+               // city.ToList().ForEach(Console.WriteLine);
+
+                //Looping over the rest of the arrays
+                for (int j = 0; j < paths.GetLength(0) - 1; j++)
+                {
+                    for (int k = 0; k < paths.GetLength(1); k++)
                     {
-                        if (paths[0, 1].Equals(paths[1, 0])){
-                            return "Tampa";
+                        //If the previous city name matches to the new city, take the destination city from that array
+                        if (city.ToList().Contains(paths[j, k]))
+                        {
+                            city.Add(paths[j, k + 1]);
+                            break;
                         }
-                       
+                        ////  city.ToList().ForEach(Console.WriteLine);
                     }
                 }
-                return "No destination";
-
-                /*                String pat = paths.GetValue(0);
-                */
+                String newCity = city[^1];
+                return newCity;
             }
             catch (Exception)
             {
 
                 throw;
 
-                return "No destination";
             }
 
 

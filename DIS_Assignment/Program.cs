@@ -168,8 +168,7 @@ namespace Assignment1_Spring2021
                     for (long j = 1; j * j <= n3; j++)
                         if (i * i + j * j == n3)
                         {
-                            Console.Write(i + "^2 + "
-                                            + j + "^2");
+                            Console.Write("Sum of both variables " + i + " and " + j + " are equal to the given number");
                             return true;
                         }
                 return false;
@@ -210,7 +209,10 @@ namespace Assignment1_Spring2021
         {
             try
             {
-                // write your code here.
+
+                //3, 1, 4, 1, 5
+                
+
                 return 0;
             }
             catch (Exception e)

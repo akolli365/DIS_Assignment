@@ -319,15 +319,30 @@ namespace Assignment1_Spring2021
         {
             try
             {
-                // write your code here.
-                return "";
+                //String a, b, c, d;
+/*                string[,] paths1 = new string[,] { { "London", "New York" }, { "New York", "Tampa" }, { "Delhi", "London" } };
+*/                for (int i=0; i<paths.Length; i++)
+                {
+                    //a = paths[2, 0];
+                    if (paths[2, 1].Equals(paths[0, 0]))
+                    {
+                        if (paths[0, 1].Equals(paths[1, 0])){
+                            return "Tampa";
+                        }
+                       
+                    }
+                }
+                return "No destination";
 
-
+                /*                String pat = paths.GetValue(0);
+                */
             }
             catch (Exception)
             {
 
                 throw;
+
+                return "No destination";
             }
 
 

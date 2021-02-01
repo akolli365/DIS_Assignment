@@ -256,14 +256,40 @@ namespace Assignment1_Spring2021
         {
             try
             {
-                // write your code here.
-                return 0;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                throw;
-            }
+                int numberOfMails = emails.Count;
+                int count = 0;
+                    //Looping over by taking the length of the array
+                    for (int i = 0; i < numberOfMails; i++)
+                    {
+                    String mail = emails.ElementAt(i);
+                    string[] splitMail = mail.Split('@');
+                    if ((splitMail[0].Contains("+")))
+                    {
+                        String[] name = splitMail[0].Split("+");
+                        if (name[1].Contains("."))
+                        {
+
+                        }
+                        else
+                        {
+                            count++;
+                        }
+
+                        }
+                    else
+                    {
+                        count++;
+                    }
+
+                    }
+
+                    return count;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    throw;
+                }
 
         }
 

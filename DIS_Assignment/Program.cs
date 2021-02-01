@@ -78,7 +78,24 @@ namespace Assignment1_Spring2021
         {
             try
             {
-                // write your code here
+                int i, j, k;
+
+                //Lopping for the number of lines
+                for (i = 1; i <= n; i++)
+                {
+                    //printing spaces by using the total number of lines 
+                    for (k = 1; k <= n - i; k++)
+                    {
+                        Console.Write(" ");
+                    }
+                    //printing stars by making the line n (n*2-1), so for each line the number of stars will be an odd number 1,3,5,7....
+                    for (j = 0; j < i * 2 - 1; j++)
+                    {
+                        Console.Write("*");
+                    }
+                    //Changing line for each loop
+                    Console.WriteLine("");
+                }
             }
             catch (Exception)
             {

@@ -28,7 +28,7 @@ namespace Assignment1_Spring2021
             bool flag = squareSums(n3);
             if (flag)
             {
-                Console.WriteLine("Yes, the number can be expressed as a sum of           squares of 2 integers");
+                Console.WriteLine("Yes, the number can be expressed as a sum of squares of 2 integers");
             }
             else
             {
@@ -121,7 +121,19 @@ namespace Assignment1_Spring2021
         {
             try
             {
-                // write your code here.
+                int i = 1, j = 0, k, m;
+                //print 0 since it is default for the pell numbers
+                Console.Write("0");
+                //loop for the n2 times
+                for (m = 0; m < n2; m++)
+                {
+                    //store i value and 2 times j into k
+                    k = i + 2 * j;
+                    Console.Write(", " + k);
+                    //move the n-2 number into i and n-1 number into j
+                    i = j;
+                    j = k;
+                }
             }
             catch (Exception)
             {
@@ -136,9 +148,9 @@ namespace Assignment1_Spring2021
         ///Given a non-negative integer c, decide whether there're two integers a and b such that a^2 + b^2 = c.
         ///For example:
         ///Input: C = 5 will return the output: true (1*1 + 2*2 = 5)
-        ///Input: A = 3 will return the output : false
-        ///Input: A = 4 will return the output: true
-        ///Input: A = 1 will return the output : true
+        ///Input: C = 3 will return the output : false
+        ///Input: C = 4 will return the output: true
+        ///Input: C = 1 will return the output : true
         ///Note: You cannot use inbuilt Math Class functions.
         /// </summary>
         /// <param name="n3"></param>
@@ -148,7 +160,18 @@ namespace Assignment1_Spring2021
         {
             try
             {
-                // write your code here\
+                //Created two for loops
+                //In both loops(i, j) checking if square of an integer is less than n3
+                // Than combine squares of both integres i and j and check if it is eqqual to n3
+                //If it is equal return true and if not return false
+                for (long i = 1; i * i <= n3; i++)
+                    for (long j = 1; j * j <= n3; j++)
+                        if (i * i + j * j == n3)
+                        {
+                            Console.Write(i + "^2 + "
+                                            + j + "^2");
+                            return true;
+                        }
                 return false;
 
             }
